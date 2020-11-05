@@ -1,3 +1,8 @@
+.vscode/settings.json
+.vscode/symbols.json
+__pycache__/*.pyc
+.vscode/.ropeproject/config.py
+.vscode/.ropeproject/objectdb
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +132,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
