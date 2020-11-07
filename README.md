@@ -16,7 +16,7 @@ Now it's just a click button for the entire scene
 
 ![](/docs/ParentMesh-To-Armature-system.gif)
 
-Attached blend file: [merge test-arm.blend](/docs/merge test-arm.blend)
+Attached blend file: [merge test-arm.blend](https://github.com/aurorasean/ParentMeshToArmature/blob/main/docs/merge%20test-arm.blend)
 
 ## How to install
 
