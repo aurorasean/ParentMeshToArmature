@@ -13,6 +13,7 @@ bl_info = {
 
 from . panel import Panel
 from . parent_mesher import Parent_Mesher
+from . material_to_vertexpaint import MaterialToVertexPaint
 
-classes = (Parent_Mesher, Panel)
+classes = (Parent_Mesher, Panel, MaterialToVertexPaint)
 register, unregister = bpy.utils.register_classes_factory(classes)

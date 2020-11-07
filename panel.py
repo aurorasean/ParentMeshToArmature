@@ -12,3 +12,6 @@ class Panel(bpy.types.Panel):
 
         row = layout.row()
         row.operator('view3d.parent_mesh_armature', text="Create Armature from Parents")
+
+        rowVertex = layout.row()
+        rowVertex.operator('view3d.material_to_vertex_paint', text="Material to Vertex paint")
