@@ -136,23 +136,24 @@ class Parent_Mesher(bpy.types.Operator):
     def assignVertexGroups(self, mergeOrders: []):
         for mergeOrder in mergeOrders:
             if mergeOrder.child.isMesh:
-                child = SceneHelper.selectObject(mergeOrder.child.name)
-                bpy.context.view_layer.objects.active = child
-                bpy.ops.object.editmode_toggle()
+                child = SceneHelper.selectObject(mergeOrder.child.name)                
+                if len(child.vertex_groups) == 0 and child.visible_get():
+                    bpy.context.view_layer.objects.active = child
+                    bpy.ops.object.editmode_toggle()
 
-                mesh = bmesh.from_edit_mesh(child.data)
-                for v in mesh.verts:
-                    v.select = True
-                # bpy.ops.object.mode_set(mode='EDIT')
+                    mesh = bmesh.from_edit_mesh(child.data)
+                    for v in mesh.verts:
+                        v.select = True
+                    # bpy.ops.object.mode_set(mode='EDIT')
 
-                listVerts = []
-                for vert in bpy.context.object.data.vertices:
-                    listVerts.append(vert.index)
+                    listVerts = []
+                    for vert in bpy.context.object.data.vertices:
+                        listVerts.append(vert.index)
 
-                bpy.ops.object.editmode_toggle()
-                group = child.vertex_groups.new()
-                group.name = mergeOrder.child.boneName
-                child.vertex_groups[group.name].add(listVerts, 1, 'REPLACE')
+                    bpy.ops.object.editmode_toggle()
+                    group = child.vertex_groups.new()
+                    group.name = mergeOrder.child.boneName
+                    child.vertex_groups[group.name].add(listVerts, 1, 'REPLACE')
             # if mergeOrder.isMesh:
 
     # Create Bones

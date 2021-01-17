@@ -3,7 +3,11 @@ import bmesh
 class SceneHelper ():
     
     def unselectAll():
-        bpy.ops.object.mode_set(mode='OBJECT')
+        if bpy.context.object:
+            current_mode = bpy.context.object.mode
+            if current_mode != 'OBJECT':
+                bpy.ops.object.mode_set(mode='OBJECT')
+
         bpy.ops.object.select_all(action='DESELECT')
         for obj in bpy.data.objects:
             obj.select_set(False)
