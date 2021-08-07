@@ -13,7 +13,6 @@ class ColourCreateData():
         self.y = y
         self.z = z
 
-
 class MaterialToVertexPaint(bpy.types.Operator):
     bl_idname = "view3d.material_to_vertex_paint"
     bl_label = "Material to Vertex paint"

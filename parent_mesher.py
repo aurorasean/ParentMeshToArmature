@@ -15,7 +15,7 @@ from . scene_helper import SceneHelper
 # magic bone move!
 
 class ParentMergeOrder():
-    def __init__(self, parent, mergeOrders: []):
+    def __init__(self, parent, mergeOrders):
         self.parent = parent
         self.mergeOrders = mergeOrders
 
@@ -23,7 +23,7 @@ class ParentMergeOrder():
 class ParentChild():
     rootBoneName = None
 
-    def __init__(self, parent, childs: []):
+    def __init__(self, parent, childs):
         self.parent = parent
         self.childs = childs
 
@@ -79,7 +79,7 @@ class Parent_Mesher(bpy.types.Operator):
         SceneHelper.unselectAll()
         return childBoneName
 
-    def addRootBoneMerge(self, mergeOrders: [], parent: ParentChild):
+    def addRootBoneMerge(self, mergeOrders, parent: ParentChild):
         parent = SceneHelper.getObject(parent.parent)
 
         parentDataHold = DataHold(parent.name, True if parent.type in self.meshTypes else False, '%s%s' % (
@@ -92,7 +92,7 @@ class Parent_Mesher(bpy.types.Operator):
     def filterMergeOrder(self, mergeOrder: MergeOrder):
         return mergeOrder.child.name != '' and mergeOrder.child.name != mergeOrder.parent.name
 
-    def getMergerOrder(self, parentName: str, mergeOrder: [], child: ParentChild, rootLevel):
+    def getMergerOrder(self, parentName: str, mergeOrder, child: ParentChild, rootLevel):
         if len(child.childs) > 0:
             for childInner in child.childs:
                 if child.parent != childInner:
@@ -118,7 +118,7 @@ class Parent_Mesher(bpy.types.Operator):
             parentDataHold, childDataHold, self.index, rootLevel))
         return mergeOrder
 
-    def getParentMergeOrder(self, parent: []):
+    def getParentMergeOrder(self, parent):
 
         mergeOrder = []
         if len(parent.childs) > 0:
@@ -133,7 +133,7 @@ class Parent_Mesher(bpy.types.Operator):
         return validMerges
     # Get Merge order
 
-    def assignVertexGroups(self, mergeOrders: []):
+    def assignVertexGroups(self, mergeOrders):
         for mergeOrder in mergeOrders:
             if mergeOrder.child.isMesh:
                 child = SceneHelper.selectObject(mergeOrder.child.name)                
@@ -189,7 +189,7 @@ class Parent_Mesher(bpy.types.Operator):
             return (current[0], current[1], current[2] + 0.01)
         return current
 
-    def createAndParentBones(self, mergeOrders: [], rootBoneName):
+    def createAndParentBones(self, mergeOrders, rootBoneName):
         for merge in mergeOrders:
 
             parent = SceneHelper.getObject(merge.parent.name)
@@ -240,7 +240,7 @@ class Parent_Mesher(bpy.types.Operator):
             bpy.ops.object.mode_set(mode='OBJECT')
             SceneHelper.unselectAll()
 
-    def parentLinksToBone(self, mergeOrders: [], parent):
+    def parentLinksToBone(self, mergeOrders, parent):
         arm_obj = bpy.data.objects[parent.rootBoneName]
         for merge in mergeOrders:
             if merge.index != 0:
@@ -260,7 +260,7 @@ class Parent_Mesher(bpy.types.Operator):
                 bpy.ops.object.mode_set(mode='OBJECT')
                 SceneHelper.unselectAll()
 
-    def mergeMeshTogether(self, mergeOrders: [], parent):
+    def mergeMeshTogether(self, mergeOrders, parent):
         parentObj = SceneHelper.getObject(parent.parent)
         parentLocation = parentObj.matrix_world.to_translation()
 
