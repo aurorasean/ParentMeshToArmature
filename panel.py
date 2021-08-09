@@ -129,3 +129,9 @@ class Panel(bpy.types.Panel):
         col.operator('view3d.assignvertex_custom', text='Assign',
                      icon='COLLECTION_COLOR_01')
 
+        row = layout.row();
+        row.label(text="Helpers")
+
+        col = row.column();
+        col.operator('view3d.fix_scale', text='Fix scale')
+

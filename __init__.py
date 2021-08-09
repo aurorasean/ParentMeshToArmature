@@ -3,6 +3,7 @@ from . assign_vertex import AssignVertex_06, AssignVertex_07, AssignVertex_08, A
 from . assign_vertex import AssignVertex_11, AssignVertex_12, AssignVertex_13, AssignVertex_14, AssignVertex_15
 from . assign_vertex import AssignVertex_16, AssignVertex_17, AssignVertex_18, AssignVertex_19, AssignVertex_20
 from . assign_vertex import AssignVertex_Custom
+from . fix_scale import FixScale
 from . material_to_vertexpaint import MaterialToVertexPaint
 from . parent_mesher import Parent_Mesher
 from . panel import Panel
@@ -23,6 +24,6 @@ classes = (Parent_Mesher, Panel, MaterialToVertexPaint,  AssignVertex_01,
            AssignVertex_06, AssignVertex_07, AssignVertex_08, AssignVertex_09, AssignVertex_10,
            AssignVertex_11, AssignVertex_12, AssignVertex_13, AssignVertex_14, AssignVertex_15,
            AssignVertex_16, AssignVertex_17, AssignVertex_18, AssignVertex_19, AssignVertex_20,
-           AssignVertex_Custom
+           AssignVertex_Custom, FixScale
            )
 register, unregister = bpy.utils.register_classes_factory(classes)
