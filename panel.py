@@ -35,11 +35,17 @@ class Panel(bpy.types.Panel):
                      text="Create Armature from Parents")
 
         rowVertex = layout.row()
-        rowVertex.label(text="Vertex colour")
+        rowVertex.label(text="Material to Vertex colour")
         rowVertex = layout.row()
-        rowVertex.operator('view3d.material_to_vertex_paint',
-                           text="Material to Vertex paint")
+        
+        box = rowVertex.box()
+        rowVertex = box.row()
+        rowVertex.operator('view3d.material_to_vertex_paint', icon="FREEZE",
+                           text="All objects")
 
+        rowVertex = box.row()
+        rowVertex.operator('view3d.material_to_vertex_paint_select', icon="DOT",
+                           text="Selected objects")
         row = layout.row()
 
         row = layout.row()

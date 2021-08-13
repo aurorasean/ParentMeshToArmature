@@ -1,9 +1,9 @@
 import bpy
 import bmesh
 
-from . merge_order import MergeOrder, DataHold
-from . bone_helper import BoneHelper
-from . scene_helper import SceneHelper
+from .. merge_order import MergeOrder, DataHold
+from .. bone_helper import BoneHelper
+from .. scene_helper import SceneHelper
 
 # Get a list of mesh
 # get list of existing bones

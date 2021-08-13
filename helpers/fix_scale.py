@@ -1,5 +1,5 @@
 import bpy
-from . scene_helper import SceneHelper
+from .. scene_helper import SceneHelper
 
 
 class FixScale(bpy.types.Operator):
