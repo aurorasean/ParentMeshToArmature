@@ -26,3 +26,4 @@ Blender -> Edit -> Preferences -> Add-ons -> Install.
 
 Select the downloaded zip file
 
+  

@@ -8,13 +8,14 @@ from . helpers.material_to_vertexpaint import MaterialToVertexPaint
 from . helpers.material_to_vertexpaint_selected import MaterialToVertexPaintSelected
 from . helpers.parent_mesher import Parent_Mesher
 
+from . MaterialPainter.materialPainter_Panel import MaterialPainter_Panel
 from . panel import Panel
 import bpy
 
 bl_info = {
-    "name": "Parent Mesh to Armature",
+    "name": "Sean Helpers",
     "author": "Sean Thomas<aurorasean@gmail.com",
-    "description": "Parent mesh tree to Armature with mesh",
+    "description": "Sean Helpers",
     "blender": (2, 80, 0),
     "version": (0, 0, 1),
     "location": "View3D",
@@ -26,6 +27,8 @@ classes = (Parent_Mesher, Panel, MaterialToVertexPaint,  AssignVertex_01,
            AssignVertex_06, AssignVertex_07, AssignVertex_08, AssignVertex_09, AssignVertex_10,
            AssignVertex_11, AssignVertex_12, AssignVertex_13, AssignVertex_14, AssignVertex_15,
            AssignVertex_16, AssignVertex_17, AssignVertex_18, AssignVertex_19, AssignVertex_20,
-           AssignVertex_Custom, FixScale, MaterialToVertexPaintSelected
+           AssignVertex_Custom, FixScale, MaterialToVertexPaintSelected,
+           MaterialPainter_Panel
            )
+
 register, unregister = bpy.utils.register_classes_factory(classes)

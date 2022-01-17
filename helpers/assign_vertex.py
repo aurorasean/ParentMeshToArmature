@@ -28,11 +28,11 @@ class AssignVertex():
         "dgreen": ColourCreateData(0, 0.8, 0),
         "lyellow": ColourCreateData(0.4, 0.4, 0),
         "royalblue": ColourCreateData(0.254901960784314, 0.411764705882353, 0.882352941176471),
-        "slateblue ": ColourCreateData(0.415686274509804, 0.352941176470588, 0.803921568627451),
-        "orchid ": ColourCreateData(0.854901960784314, 0.43921568627451, 0.83921568627451),
-        "lavender ": ColourCreateData(0.901960784313726, 0.901960784313726, 0.980392156862745),
-        "lightcoral ": ColourCreateData(0.941176470588235, 0.501960784313725, 0.501960784313725),
-        "lawngreen ": ColourCreateData(0.486274509803922, 0.988235294117647, 0),
+        "slateblue": ColourCreateData(0.415686274509804, 0.352941176470588, 0.803921568627451),
+        "orchid": ColourCreateData(0.854901960784314, 0.43921568627451, 0.83921568627451),
+        "lavender": ColourCreateData(0.901960784313726, 0.901960784313726, 0.980392156862745),
+        "lightcoral": ColourCreateData(0.941176470588235, 0.501960784313725, 0.501960784313725),
+        "lawngreen": ColourCreateData(0.486274509803922, 0.988235294117647, 0),
     }
 
     def AssignVertexColourCustom(self, colour):
